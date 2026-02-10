@@ -38,7 +38,7 @@ body{
   gap:40px;
 }
 
-/* ===== PROFILE CARD ===== */
+/* ===== PROFILE ===== */
 .profile-card{
   background:var(--glass);
   backdrop-filter:blur(18px);
@@ -82,7 +82,6 @@ body{
   color:var(--muted);
 }
 
-/* ===== BUTTON ===== */
 .btn{
   display:block;
   width:100%;
@@ -105,14 +104,44 @@ body{
   overflow:hidden;
 }
 
-/* ===== HERO ===== */
+/* ================= HERO (IMPROVED) ================= */
 .hero{
-  padding:70px 56px 80px;
+  padding:80px 56px 90px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(600px 200px at 20% 0%, rgba(99,102,241,.25), transparent 60%),
+    radial-gradient(600px 200px at 80% 100%, rgba(56,189,248,.18), transparent 60%);
+  z-index:0;
+}
+
+.hero-content{
+  position:relative;
+  z-index:1;
+}
+
+.hero small{
+  display:inline-block;
+  margin-bottom:14px;
+  padding:6px 12px;
+  font-size:.75rem;
+  border-radius:999px;
+  background:#020617;
+  border:1px solid var(--border);
+  color:var(--muted);
 }
 
 .hero h2{
-  font-size:2.6rem;
-  font-weight:800;
+  font-size:3rem;
+  font-weight:900;
+  letter-spacing:-1px;
+  line-height:1.05;
 }
 
 .hero h2 span{
@@ -122,11 +151,11 @@ body{
 }
 
 .hero p{
-  margin-top:18px;
-  max-width:560px;
-  font-size:1.05rem;
+  margin-top:20px;
+  max-width:600px;
+  font-size:1.08rem;
+  line-height:1.75;
   color:var(--muted);
-  line-height:1.7;
 }
 
 /* ===== SECTIONS ===== */
@@ -193,7 +222,13 @@ section p{
   .container{
     grid-template-columns:1fr;
   }
-  .hero,section{
+  .hero{
+    padding:60px 26px 70px;
+  }
+  .hero h2{
+    font-size:2.2rem;
+  }
+  section{
     padding:40px 26px;
   }
 }
@@ -204,7 +239,6 @@ section p{
 
 <div class="container">
 
-  <!-- PROFILE -->
   <aside class="profile-card">
     <div class="avatar"></div>
     <h1>Sanket Sharma</h1>
@@ -221,27 +255,30 @@ section p{
     </a>
   </aside>
 
-  <!-- MAIN -->
   <main class="main">
 
+    <!-- HERO -->
     <div class="hero">
-      <h2>
-        Beginner<br>
-        <span>Python Coder</span>
-      </h2>
-      <p>
-        I’m a student developer with a strong foundation in Python.
-        I focus on logic building and learning real-world concepts
-        step by step through practice.
-      </p>
+      <div class="hero-content">
+        <small>Focused on Logic · Learning by Building</small>
+        <h2>
+          Beginner<br>
+          <span>Python Coder</span>
+        </h2>
+        <p>
+          I’m a student developer with strong fundamentals in Python.
+          I focus on logic building, real-world practice, and learning
+          step by step instead of rushing concepts.
+        </p>
+      </div>
     </div>
 
     <section>
       <h3>About Me</h3>
       <p>
-        I prefer understanding concepts deeply instead of rushing.
+        I prefer understanding concepts deeply rather than memorizing.
         Python is my strongest language, and I’m gradually expanding
-        into web development and backend technologies.
+        into web development and Firebase-based projects.
       </p>
     </section>
 
@@ -259,26 +296,20 @@ section p{
 
     <section>
       <h3>Projects</h3>
-
       <div class="project">
         <h4>TrackMyPaisa – Expense Tracker</h4>
         <p>
-          TrackMyPaisa is a personal expense tracking web application
-          built as a learning project to understand real-world logic
-          and Firebase integration.
+          A personal expense tracking web app built to understand
+          real-world logic and Firebase integration.
         </p>
-
         <ul>
           <li>Add and store expenses securely</li>
           <li>Real-time data storage using Firebase</li>
           <li>Track total and category-wise expenses</li>
-          <li>Simple and user-friendly interface</li>
         </ul>
-
         <p style="margin-top:10px;">
           <strong>Tech Used:</strong> HTML, CSS, JavaScript, Firebase
         </p>
-
         <a href="https://trackmypaisa.netlify.app/" target="_blank">
           🔗 Live Project
         </a>
