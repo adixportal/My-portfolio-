@@ -7,12 +7,10 @@
 
 <style>
 :root{
-  --bg:#0b0f1a;
-  --card:#121826;
+  --bg:#0a0d14;
   --text:#e5e7eb;
   --muted:#9ca3af;
   --accent:#38bdf8;
-  --border:#1f2937;
 }
 
 *{
@@ -25,81 +23,76 @@
 body{
   background:var(--bg);
   color:var(--text);
-  line-height:1.7;
 }
 
 /* ===== LAYOUT ===== */
-.container{
-  max-width:950px;
+.wrapper{
+  max-width:1100px;
   margin:auto;
-  padding:80px 20px 50px;
+  padding:90px 24px;
 }
 
-/* ===== HEADER ===== */
-header{
-  margin-bottom:80px;
+/* ===== HERO ===== */
+.hero{
+  margin-bottom:90px;
 }
 
-header h1{
-  font-size:2.6rem;
+.hero h1{
+  font-size:3.2rem;
   font-weight:700;
   letter-spacing:-1px;
 }
 
-header h1 span{
+.hero h1 span{
   color:var(--accent);
 }
 
-header p{
-  max-width:650px;
-  margin-top:14px;
-  font-size:1.05rem;
+.hero p{
+  max-width:720px;
+  margin-top:18px;
+  font-size:1.1rem;
+  line-height:1.7;
   color:var(--muted);
 }
 
 /* ===== SECTION ===== */
 section{
-  margin-bottom:70px;
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:40px;
+  margin-bottom:80px;
 }
 
 section h2{
-  font-size:1.45rem;
-  font-weight:600;
-  margin-bottom:22px;
-}
-
-/* ===== CARD ===== */
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:26px;
-}
-
-/* ===== TEXT ===== */
-.card p{
-  margin-bottom:12px;
   font-size:0.95rem;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
   color:var(--muted);
+}
+
+/* ===== CONTENT TEXT ===== */
+.content p{
+  font-size:1.02rem;
+  color:var(--muted);
+  margin-bottom:14px;
 }
 
 /* ===== SKILLS ===== */
 .skills{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
 }
 
 .skill{
-  background:#0f172a;
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:12px 14px;
   font-size:0.9rem;
-  color:#e5e7eb;
+  padding:8px 14px;
+  border:1px solid #1f2937;
+  border-radius:20px;
+  color:#d1d5db;
 }
 
-/* ===== PROJECTS ===== */
+/* ===== PROJECT ===== */
 .project{
   margin-bottom:24px;
 }
@@ -107,33 +100,36 @@ section h2{
 .project h3{
   font-size:1.05rem;
   margin-bottom:6px;
-  color:#e5e7eb;
+  color:#f9fafb;
 }
 
 .project p{
-  font-size:0.94rem;
+  font-size:0.95rem;
   color:var(--muted);
 }
 
 /* ===== CONTACT ===== */
 .contact p{
-  margin-bottom:6px;
   font-size:0.95rem;
+  margin-bottom:8px;
+  color:var(--muted);
 }
 
 /* ===== FOOTER ===== */
 footer{
-  text-align:center;
-  color:#6b7280;
+  margin-top:120px;
   font-size:0.85rem;
-  padding-top:60px;
-  border-top:1px solid var(--border);
+  color:#6b7280;
 }
 
 /* ===== RESPONSIVE ===== */
-@media(max-width:600px){
-  header h1{
-    font-size:2rem;
+@media(max-width:800px){
+  section{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:2.2rem;
   }
 }
 </style>
@@ -141,29 +137,29 @@ footer{
 
 <body>
 
-<div class="container">
+<div class="wrapper">
 
-  <!-- HEADER -->
-  <header>
+  <!-- HERO -->
+  <div class="hero">
     <h1>Sanket <span>Sharma</span></h1>
     <p>
-      Beginner Python developer and student with a strong foundation
-      in programming and logical problem solving.  
-      Currently expanding skills into web and backend development.
+      Python developer and student with a strong foundation in programming,
+      logical thinking, and problem solving.
+      Currently learning web and backend technologies.
     </p>
-  </header>
+  </div>
 
   <!-- ABOUT -->
   <section>
     <h2>About</h2>
-    <div class="card">
+    <div class="content">
       <p>
-        I am a student developer with strong knowledge of Python and
-        a clear understanding of programming fundamentals.
+        I am a student developer with strong command over Python fundamentals.
+        I enjoy building logic-based programs and writing clean, readable code.
       </p>
       <p>
-        I enjoy working on logical problems, writing clean code,
-        and learning new technologies step by step.
+        Alongside Python, I am learning HTML, CSS, JavaScript, and Firebase
+        to grow into a full-stack developer.
       </p>
     </div>
   </section>
@@ -171,7 +167,7 @@ footer{
   <!-- SKILLS -->
   <section>
     <h2>Skills</h2>
-    <div class="card skills">
+    <div class="content skills">
       <div class="skill">Python (Strong)</div>
       <div class="skill">Problem Solving</div>
       <div class="skill">Data Structures (Basics)</div>
@@ -186,12 +182,12 @@ footer{
   <!-- PROJECTS -->
   <section>
     <h2>Projects</h2>
-    <div class="card">
+    <div class="content">
 
       <div class="project">
         <h3>Python Logic Programs</h3>
         <p>
-          Practice programs based on loops, conditions, strings,
+          Logic-building programs using loops, conditions, strings,
           lists, dictionaries, and functions.
         </p>
       </div>
@@ -199,7 +195,7 @@ footer{
       <div class="project">
         <h3>Number Guessing Game</h3>
         <p>
-          Console-based Python game using random module and loops.
+          Console-based Python game using random module and control flow.
         </p>
       </div>
 
@@ -210,39 +206,21 @@ footer{
         </p>
       </div>
 
-      <div class="project">
-        <h3>Personal Portfolio Website</h3>
-        <p>
-          Clean and minimal portfolio built using HTML & CSS.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LEARNING -->
-  <section>
-    <h2>Currently Learning</h2>
-    <div class="card">
-      <p>• Advanced Python concepts</p>
-      <p>• Data Structures & Algorithms</p>
-      <p>• JavaScript logic building</p>
-      <p>• Firebase authentication & database</p>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section>
     <h2>Contact</h2>
-    <div class="card contact">
-      <p>📞 WhatsApp: +91 63673 17712</p>
-      <p>📧 Email: sanketsharma.web@gmail.com</p>
-      <p>💻 GitHub: github.com/yourusername</p>
+    <div class="content contact">
+      <p>WhatsApp — +91 63673 17712</p>
+      <p>Email — sanketsharma.web@gmail.com</p>
+      <p>GitHub — github.com/yourusername</p>
     </div>
   </section>
 
   <footer>
-    © 2026 Sanket Sharma • Python Developer
+    © 2026 Sanket Sharma
   </footer>
 
 </div>
