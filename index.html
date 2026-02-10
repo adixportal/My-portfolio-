@@ -7,8 +7,8 @@
 
 <style>
 :root{
-  --bg:#0a0d14;
-  --text:#e5e7eb;
+  --bg:#05070c;
+  --text:#f9fafb;
   --muted:#9ca3af;
   --accent:#38bdf8;
 }
@@ -21,115 +21,122 @@
 }
 
 body{
-  background:var(--bg);
+  background:radial-gradient(80% 50% at 50% 0%, #0b1220 0%, #05070c 60%);
   color:var(--text);
-}
-
-/* ===== LAYOUT ===== */
-.wrapper{
-  max-width:1100px;
-  margin:auto;
-  padding:90px 24px;
 }
 
 /* ===== HERO ===== */
 .hero{
-  margin-bottom:90px;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+}
+
+.hero-inner{
+  max-width:1100px;
+  margin:auto;
+  padding:0 24px;
 }
 
 .hero h1{
-  font-size:3.2rem;
-  font-weight:700;
-  letter-spacing:-1px;
+  font-size:4rem;
+  font-weight:800;
+  line-height:1.05;
+  letter-spacing:-1.5px;
 }
 
 .hero h1 span{
-  color:var(--accent);
+  background:linear-gradient(90deg,#38bdf8,#818cf8);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 .hero p{
+  margin-top:26px;
+  font-size:1.15rem;
   max-width:720px;
-  margin-top:18px;
-  font-size:1.1rem;
-  line-height:1.7;
   color:var(--muted);
 }
 
-/* ===== SECTION ===== */
-section{
+/* ===== SECTIONS ===== */
+.section{
+  max-width:1100px;
+  margin:120px auto;
+  padding:0 24px;
   display:grid;
-  grid-template-columns:220px 1fr;
-  gap:40px;
-  margin-bottom:80px;
+  grid-template-columns:260px 1fr;
+  gap:60px;
 }
 
-section h2{
-  font-size:0.95rem;
-  letter-spacing:1.5px;
+.section h2{
+  font-size:0.9rem;
+  letter-spacing:2px;
   text-transform:uppercase;
   color:var(--muted);
 }
 
-/* ===== CONTENT TEXT ===== */
+/* ===== CONTENT ===== */
 .content p{
-  font-size:1.02rem;
+  font-size:1.05rem;
+  line-height:1.9;
   color:var(--muted);
-  margin-bottom:14px;
+  margin-bottom:16px;
 }
 
 /* ===== SKILLS ===== */
 .skills{
   display:flex;
   flex-wrap:wrap;
-  gap:12px;
+  gap:14px;
 }
 
 .skill{
-  font-size:0.9rem;
-  padding:8px 14px;
+  padding:10px 18px;
+  border-radius:30px;
   border:1px solid #1f2937;
-  border-radius:20px;
-  color:#d1d5db;
+  font-size:0.9rem;
+  color:#e5e7eb;
+  background:rgba(255,255,255,0.02);
 }
 
 /* ===== PROJECT ===== */
 .project{
-  margin-bottom:24px;
+  margin-bottom:36px;
 }
 
 .project h3{
-  font-size:1.05rem;
-  margin-bottom:6px;
-  color:#f9fafb;
+  font-size:1.15rem;
+  margin-bottom:8px;
 }
 
 .project p{
-  font-size:0.95rem;
   color:var(--muted);
+  font-size:1rem;
 }
 
 /* ===== CONTACT ===== */
 .contact p{
-  font-size:0.95rem;
-  margin-bottom:8px;
+  font-size:1rem;
   color:var(--muted);
+  margin-bottom:10px;
 }
 
 /* ===== FOOTER ===== */
 footer{
-  margin-top:120px;
-  font-size:0.85rem;
+  text-align:center;
   color:#6b7280;
+  font-size:0.85rem;
+  padding:80px 0 40px;
 }
 
 /* ===== RESPONSIVE ===== */
-@media(max-width:800px){
-  section{
-    grid-template-columns:1fr;
-  }
-
+@media(max-width:900px){
   .hero h1{
-    font-size:2.2rem;
+    font-size:2.6rem;
+  }
+  .section{
+    grid-template-columns:1fr;
+    gap:24px;
   }
 }
 </style>
@@ -137,93 +144,95 @@ footer{
 
 <body>
 
-<div class="wrapper">
-
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Sanket <span>Sharma</span></h1>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <h1>
+      Sanket<br>
+      <span>Sharma</span>
+    </h1>
     <p>
-      Python developer and student with a strong foundation in programming,
-      logical thinking, and problem solving.
-      Currently learning web and backend technologies.
+      Python developer and student focused on logic,
+      problem solving, and writing clean, efficient code.
+      Currently learning web and backend technologies
+      to build real-world applications.
     </p>
   </div>
-
-  <!-- ABOUT -->
-  <section>
-    <h2>About</h2>
-    <div class="content">
-      <p>
-        I am a student developer with strong command over Python fundamentals.
-        I enjoy building logic-based programs and writing clean, readable code.
-      </p>
-      <p>
-        Alongside Python, I am learning HTML, CSS, JavaScript, and Firebase
-        to grow into a full-stack developer.
-      </p>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section>
-    <h2>Skills</h2>
-    <div class="content skills">
-      <div class="skill">Python (Strong)</div>
-      <div class="skill">Problem Solving</div>
-      <div class="skill">Data Structures (Basics)</div>
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">JavaScript (Beginner)</div>
-      <div class="skill">Git & GitHub</div>
-      <div class="skill">Firebase (Learning)</div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section>
-    <h2>Projects</h2>
-    <div class="content">
-
-      <div class="project">
-        <h3>Python Logic Programs</h3>
-        <p>
-          Logic-building programs using loops, conditions, strings,
-          lists, dictionaries, and functions.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3>Number Guessing Game</h3>
-        <p>
-          Console-based Python game using random module and control flow.
-        </p>
-      </div>
-
-      <div class="project">
-        <h3>Simple Calculator</h3>
-        <p>
-          Menu-driven calculator built using Python functions.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section>
-    <h2>Contact</h2>
-    <div class="content contact">
-      <p>WhatsApp — +91 63673 17712</p>
-      <p>Email — sanketsharma.web@gmail.com</p>
-      <p>GitHub — github.com/yourusername</p>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 Sanket Sharma
-  </footer>
-
 </div>
+
+<!-- ABOUT -->
+<div class="section">
+  <h2>About</h2>
+  <div class="content">
+    <p>
+      I am a student developer with strong command over Python fundamentals.
+      My strength lies in logical thinking and structured problem solving.
+    </p>
+    <p>
+      I enjoy learning by building, breaking, and improving my code step by step.
+      My goal is to grow into a skilled full-stack developer.
+    </p>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+  <h2>Skills</h2>
+  <div class="content skills">
+    <div class="skill">Python (Strong)</div>
+    <div class="skill">Problem Solving</div>
+    <div class="skill">Data Structures (Basics)</div>
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript (Beginner)</div>
+    <div class="skill">Git & GitHub</div>
+    <div class="skill">Firebase (Learning)</div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section">
+  <h2>Projects</h2>
+  <div class="content">
+
+    <div class="project">
+      <h3>Python Logic Programs</h3>
+      <p>
+        Collection of programs focused on loops,
+        conditions, strings, lists, dictionaries, and functions.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Number Guessing Game</h3>
+      <p>
+        Console-based Python game using random module and control flow.
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Simple Calculator</h3>
+      <p>
+        Menu-driven calculator implemented using Python functions.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section">
+  <h2>Contact</h2>
+  <div class="content contact">
+    <p>WhatsApp — +91 63673 17712</p>
+    <p>Email — sanketsharma.web@gmail.com</p>
+    <p>GitHub — github.com/yourusername</p>
+  </div>
+</div>
+
+<footer>
+  © 2026 Sanket Sharma
+</footer>
 
 </body>
 </html>
