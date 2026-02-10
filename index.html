@@ -49,15 +49,23 @@ body{
   box-shadow:0 20px 60px rgba(0,0,0,0.45);
 }
 
+/* ===== AVATAR WITH IMAGE ===== */
 .avatar{
   width:96px;
   height:96px;
   border-radius:50%;
   margin:auto;
-  background:
-    linear-gradient(#020617,#020617) padding-box,
-    linear-gradient(135deg,#6366f1,#38bdf8) border-box;
-  border:3px solid transparent;
+  padding:3px;
+  background:linear-gradient(135deg,#6366f1,#38bdf8);
+}
+
+.avatar img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  background:#020617;
 }
 
 .profile-card h1{
@@ -82,6 +90,7 @@ body{
   color:var(--muted);
 }
 
+/* ===== BUTTON ===== */
 .btn{
   display:block;
   width:100%;
@@ -104,44 +113,16 @@ body{
   overflow:hidden;
 }
 
-/* ================= HERO (IMPROVED) ================= */
+/* ===== HERO ===== */
 .hero{
   padding:80px 56px 90px;
   position:relative;
-  overflow:hidden;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(600px 200px at 20% 0%, rgba(99,102,241,.25), transparent 60%),
-    radial-gradient(600px 200px at 80% 100%, rgba(56,189,248,.18), transparent 60%);
-  z-index:0;
-}
-
-.hero-content{
-  position:relative;
-  z-index:1;
-}
-
-.hero small{
-  display:inline-block;
-  margin-bottom:14px;
-  padding:6px 12px;
-  font-size:.75rem;
-  border-radius:999px;
-  background:#020617;
-  border:1px solid var(--border);
-  color:var(--muted);
 }
 
 .hero h2{
   font-size:3rem;
   font-weight:900;
   letter-spacing:-1px;
-  line-height:1.05;
 }
 
 .hero h2 span{
@@ -239,8 +220,12 @@ section p{
 
 <div class="container">
 
+  <!-- PROFILE -->
   <aside class="profile-card">
-    <div class="avatar"></div>
+    <div class="avatar">
+      <img src="https://i.ibb.co/CkKrmCf/7f44f0859815c92e80b074afe2d94c51.jpg" alt="Sanket Sharma">
+    </div>
+
     <h1>Sanket Sharma</h1>
     <p>Beginner Python Coder · Student</p>
 
@@ -255,28 +240,25 @@ section p{
     </a>
   </aside>
 
+  <!-- MAIN -->
   <main class="main">
 
-    <!-- HERO -->
     <div class="hero">
-      <div class="hero-content">
-        <small>Focused on Logic · Learning by Building</small>
-        <h2>
-          Beginner<br>
-          <span>Python Coder</span>
-        </h2>
-        <p>
-          I’m a student developer with strong fundamentals in Python.
-          I focus on logic building, real-world practice, and learning
-          step by step instead of rushing concepts.
-        </p>
-      </div>
+      <h2>
+        Beginner<br>
+        <span>Python Coder</span>
+      </h2>
+      <p>
+        I’m a student developer with strong Python fundamentals.
+        I focus on logic building, clean code, and learning real-world
+        concepts step by step.
+      </p>
     </div>
 
     <section>
       <h3>About Me</h3>
       <p>
-        I prefer understanding concepts deeply rather than memorizing.
+        I prefer understanding concepts deeply instead of memorizing.
         Python is my strongest language, and I’m gradually expanding
         into web development and Firebase-based projects.
       </p>
@@ -299,8 +281,9 @@ section p{
       <div class="project">
         <h4>TrackMyPaisa – Expense Tracker</h4>
         <p>
-          A personal expense tracking web app built to understand
-          real-world logic and Firebase integration.
+          A personal expense tracking web application built as a
+          learning project to understand real-world logic and
+          Firebase integration.
         </p>
         <ul>
           <li>Add and store expenses securely</li>
