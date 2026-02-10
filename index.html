@@ -28,7 +28,7 @@ body{
   color:var(--text);
 }
 
-/* ================= LAYOUT ================= */
+/* ===== LAYOUT ===== */
 .container{
   max-width:1150px;
   margin:auto;
@@ -38,7 +38,7 @@ body{
   gap:40px;
 }
 
-/* ================= PROFILE CARD ================= */
+/* ===== PROFILE ===== */
 .profile-card{
   background:var(--glass);
   backdrop-filter:blur(18px);
@@ -46,7 +46,6 @@ body{
   border-radius:26px;
   padding:36px 26px;
   text-align:center;
-  box-shadow:0 20px 60px rgba(0,0,0,0.45);
 }
 
 .avatar{
@@ -82,7 +81,6 @@ body{
   color:var(--muted);
 }
 
-/* ================= BUTTON ================= */
 .btn{
   display:block;
   width:100%;
@@ -92,14 +90,11 @@ body{
   font-weight:600;
   text-decoration:none;
   text-align:center;
-}
-
-.btn.whatsapp{
   background:var(--green);
   color:#052e16;
 }
 
-/* ================= MAIN CONTENT ================= */
+/* ===== MAIN ===== */
 .main{
   background:var(--glass);
   backdrop-filter:blur(18px);
@@ -108,52 +103,28 @@ body{
   overflow:hidden;
 }
 
-/* ================= HERO ================= */
+/* ===== HERO ===== */
 .hero{
   padding:70px 56px 80px;
-  position:relative;
-}
-
-.hero::before{
-  content:"";
-  position:absolute;
-  top:-40%;
-  left:50%;
-  transform:translateX(-50%);
-  width:700px;
-  height:700px;
-  background:radial-gradient(circle,rgba(99,102,241,0.25),transparent 60%);
-  animation:float 8s ease-in-out infinite;
-}
-
-@keyframes float{
-  0%,100%{transform:translate(-50%,0);}
-  50%{transform:translate(-50%,40px);}
 }
 
 .hero h2{
-  position:relative;
   font-size:2.6rem;
   font-weight:800;
-  line-height:1.1;
 }
 
 .hero h2 span{
-  background:linear-gradient(90deg,#6366f1,#38bdf8);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  color:#38bdf8;
 }
 
 .hero p{
-  position:relative;
-  margin-top:22px;
+  margin-top:18px;
   max-width:560px;
   font-size:1.05rem;
-  line-height:1.7;
   color:var(--muted);
 }
 
-/* ================= SECTIONS ================= */
+/* ===== SECTION ===== */
 section{
   padding:46px 56px;
   border-top:1px solid var(--border);
@@ -170,7 +141,7 @@ section p{
   line-height:1.7;
 }
 
-/* skills */
+/* ===== SKILLS ===== */
 .skills{
   display:flex;
   flex-wrap:wrap;
@@ -185,26 +156,37 @@ section p{
   font-size:0.9rem;
 }
 
-/* project */
+/* ===== PROJECT ===== */
 .project{
   background:#020617;
   border:1px solid var(--border);
   border-radius:18px;
-  padding:20px;
+  padding:24px;
 }
 
 .project h4{
-  font-size:1.1rem;
-  margin-bottom:6px;
+  font-size:1.2rem;
+  margin-bottom:10px;
 }
 
-/* ================= RESPONSIVE ================= */
+.project ul{
+  margin-top:10px;
+  padding-left:18px;
+  color:var(--muted);
+}
+
+.project a{
+  display:inline-block;
+  margin-top:16px;
+  color:#38bdf8;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* ===== RESPONSIVE ===== */
 @media(max-width:900px){
   .container{
     grid-template-columns:1fr;
-  }
-  .hero h2{
-    font-size:2.1rem;
   }
   .hero,section{
     padding:40px 26px;
@@ -229,11 +211,7 @@ section p{
       <div>🌱 Learning Web Development</div>
     </div>
 
-    <!-- ONLY WORKING WHATSAPP BUTTON -->
-    <a 
-      href="https://wa.me/916367317712" 
-      target="_blank" 
-      class="btn whatsapp">
+    <a href="https://wa.me/916367317712" target="_blank" class="btn">
       WhatsApp
     </a>
   </aside>
@@ -248,41 +226,46 @@ section p{
       </h2>
       <p>
         I’m a student developer with a strong foundation in Python.
-        I enjoy solving logical problems and building my skills step by step
-        through practice and learning.
+        I enjoy solving logical problems and building real-world projects
+        to improve my skills step by step.
       </p>
     </div>
-
-    <section>
-      <h3>About Me</h3>
-      <p>
-        I focus on understanding programming concepts deeply.
-        Python is my strongest language, and I’m gradually expanding
-        into web and backend development.
-      </p>
-    </section>
 
     <section>
       <h3>Skills</h3>
       <div class="skills">
         <div class="skill">Python (Strong)</div>
         <div class="skill">Problem Solving</div>
-        <div class="skill">Data Structures (Basics)</div>
-        <div class="skill">HTML (Learning)</div>
-        <div class="skill">CSS (Learning)</div>
-        <div class="skill">JavaScript (Beginner)</div>
-        <div class="skill">Git & GitHub</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
       </div>
     </section>
 
+    <!-- TRACKMYPaisa PROJECT -->
     <section>
-      <h3>Projects</h3>
+      <h3>Project</h3>
       <div class="project">
-        <h4>Python Logic Practice Programs</h4>
+        <h4>TrackMyPaisa – Expense Tracker</h4>
         <p>
-          A collection of beginner-level Python programs focusing on
-          loops, conditions, strings, lists, dictionaries, and functions.
+          TrackMyPaisa is a personal expense tracking web application
+          that helps users manage daily expenses in a simple way.
         </p>
+
+        <ul>
+          <li>Add daily expenses with amount</li>
+          <li>View total expenses</li>
+          <li>Track spending habits</li>
+          <li>Clean and user-friendly interface</li>
+        </ul>
+
+        <p style="margin-top:10px;">
+          <strong>Tech Used:</strong> HTML, CSS, JavaScript
+        </p>
+
+        <a href="https://trackmypaisa.netlify.app/" target="_blank">
+          🔗 Live Project
+        </a>
       </div>
     </section>
 
