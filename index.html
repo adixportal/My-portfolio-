@@ -8,11 +8,12 @@
 <style>
 :root{
   --bg:#050b1a;
-  --panel:#0b1228cc;
+  --card:#0b1228;
+  --glass:rgba(11,18,40,0.7);
   --text:#e5e7eb;
   --muted:#9ca3af;
   --accent:#6366f1;
-  --accent2:#22c55e;
+  --green:#22c55e;
   --border:rgba(255,255,255,0.08);
 }
 
@@ -20,7 +21,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
 }
 
 body{
@@ -29,7 +30,7 @@ body{
 }
 
 /* ================= LAYOUT ================= */
-.main{
+.container{
   max-width:1150px;
   margin:auto;
   padding:50px 20px;
@@ -38,126 +39,109 @@ body{
   gap:40px;
 }
 
-/* ================= SIDEBAR ================= */
-.sidebar{
-  background:var(--panel);
-  backdrop-filter: blur(16px);
+/* ================= PROFILE CARD ================= */
+.profile-card{
+  background:var(--glass);
+  backdrop-filter:blur(18px);
   border:1px solid var(--border);
-  border-radius:24px;
-  padding:32px 26px;
-}
-
-.profile{
+  border-radius:26px;
+  padding:36px 26px;
   text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,0.45);
 }
 
 .avatar{
   width:96px;
   height:96px;
+  border-radius:50%;
   margin:auto;
-  border-radius:50%;
-  background:linear-gradient(135deg,var(--accent),#38bdf8);
-  padding:3px;
+  background:
+    linear-gradient(#020617,#020617) padding-box,
+    linear-gradient(135deg,#6366f1,#38bdf8) border-box;
+  border:3px solid transparent;
 }
 
-.avatar div{
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  background:#020617;
-}
-
-.profile h1{
+.profile-card h1{
   margin-top:18px;
   font-size:1.5rem;
 }
 
-.profile p{
-  color:var(--muted);
-  font-size:0.95rem;
+.profile-card p{
   margin-top:6px;
+  font-size:0.95rem;
+  color:var(--muted);
 }
 
-/* info */
-.info{
-  margin-top:30px;
+.profile-info{
+  text-align:left;
+  margin-top:26px;
   font-size:0.9rem;
 }
 
-.info div{
+.profile-info div{
   margin-bottom:10px;
   color:var(--muted);
 }
 
-/* buttons */
+/* ================= BUTTONS ================= */
 .btn{
   display:block;
   width:100%;
-  text-align:center;
   padding:14px;
   border-radius:14px;
   margin-top:16px;
   font-weight:600;
   text-decoration:none;
+  text-align:center;
 }
 
 .btn.whatsapp{
-  background:var(--accent2);
+  background:var(--green);
   color:#052e16;
 }
 
-.btn.primary{
+.btn.contact{
   background:var(--accent);
   color:white;
 }
 
-/* ================= CONTENT ================= */
-.content{
-  background:var(--panel);
-  backdrop-filter: blur(16px);
+/* ================= MAIN CONTENT ================= */
+.main{
+  background:var(--glass);
+  backdrop-filter:blur(18px);
   border:1px solid var(--border);
   border-radius:28px;
-  padding:0;
   overflow:hidden;
 }
 
 /* ================= HERO ================= */
 .hero{
-  position:relative;
   padding:70px 56px 80px;
-  overflow:hidden;
+  position:relative;
 }
 
 .hero::before{
   content:"";
   position:absolute;
-  top:-35%;
+  top:-40%;
   left:50%;
   transform:translateX(-50%);
   width:700px;
   height:700px;
-  background:radial-gradient(circle, rgba(99,102,241,0.25), transparent 60%);
-  animation: floatGlow 8s ease-in-out infinite;
+  background:radial-gradient(circle,rgba(99,102,241,0.25),transparent 60%);
+  animation:float 8s ease-in-out infinite;
 }
 
-@keyframes floatGlow{
-  0%,100%{ transform:translateX(-50%) translateY(0); }
-  50%{ transform:translateX(-50%) translateY(40px); }
-}
-
-.hero-content{
-  position:relative;
-  z-index:1;
+@keyframes float{
+  0%,100%{transform:translate(-50%,0);}
+  50%{transform:translate(-50%,40px);}
 }
 
 .hero h2{
+  position:relative;
   font-size:2.6rem;
   font-weight:800;
   line-height:1.1;
-  letter-spacing:-1px;
-  opacity:0;
-  transform:translateY(30px);
-  animation: fadeUp .9s ease forwards;
 }
 
 .hero h2 span{
@@ -167,22 +151,12 @@ body{
 }
 
 .hero p{
+  position:relative;
   margin-top:22px;
   max-width:560px;
-  color:var(--muted);
   font-size:1.05rem;
   line-height:1.7;
-  opacity:0;
-  transform:translateY(25px);
-  animation: fadeUp .9s ease forwards;
-  animation-delay:.3s;
-}
-
-@keyframes fadeUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+  color:var(--muted);
 }
 
 /* ================= SECTIONS ================= */
@@ -207,24 +181,22 @@ section p{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
-  margin-top:10px;
 }
 
 .skill{
   padding:8px 15px;
+  border-radius:20px;
   background:#020617;
   border:1px solid var(--border);
-  border-radius:20px;
   font-size:0.9rem;
 }
 
 /* project */
 .project{
-  margin-top:8px;
-  padding:20px;
   background:#020617;
   border:1px solid var(--border);
   border-radius:18px;
+  padding:20px;
 }
 
 .project h4{
@@ -232,19 +204,36 @@ section p{
   margin-bottom:6px;
 }
 
-.project p{
-  font-size:0.95rem;
+/* ================= CONTACT FORM ================= */
+input,textarea{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  background:#020617;
+  border:1px solid var(--border);
+  color:white;
+  margin-bottom:14px;
 }
 
-/* responsive */
+button{
+  width:100%;
+  padding:13px;
+  border-radius:14px;
+  border:none;
+  background:var(--accent);
+  color:white;
+  font-weight:600;
+}
+
+/* ================= RESPONSIVE ================= */
 @media(max-width:900px){
-  .main{
+  .container{
     grid-template-columns:1fr;
   }
   .hero h2{
     font-size:2.1rem;
   }
-  .hero, section{
+  .hero,section{
     padding:40px 26px;
   }
 }
@@ -253,55 +242,57 @@ section p{
 
 <body>
 
-<div class="main">
+<div class="container">
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="profile">
-      <div class="avatar"><div></div></div>
-      <h1>Sanket Sharma</h1>
-      <p>Beginner Python Coder · Student</p>
-    </div>
+  <!-- PROFILE -->
+  <aside class="profile-card">
+    <div class="avatar"></div>
+    <h1>Sanket Sharma</h1>
+    <p>Beginner Python Coder · Student</p>
 
-    <div class="info">
+    <div class="profile-info">
       <div>📧 sanketsharma.web@gmail.com</div>
       <div>🐍 Python · Logic Focused</div>
       <div>🌱 Learning Web Development</div>
     </div>
 
-    <a href="#" class="btn whatsapp">WhatsApp</a>
-    <a href="#" class="btn primary">Contact</a>
+    <!-- WORKING BUTTONS -->
+    <a 
+      href="https://wa.me/916367317712" 
+      target="_blank" 
+      class="btn whatsapp">
+      WhatsApp
+    </a>
+
+    <a href="#contact" class="btn contact">
+      Contact
+    </a>
   </aside>
 
-  <!-- MAIN CONTENT -->
-  <main class="content">
+  <!-- MAIN -->
+  <main class="main">
 
-    <!-- HERO -->
     <div class="hero">
-      <div class="hero-content">
-        <h2>
-          Beginner<br>
-          <span>Python Coder</span>
-        </h2>
-        <p>
-          I’m a student developer with a strong foundation in Python.
-          I enjoy solving logical problems and building my skills
-          step by step through practice and learning.
-        </p>
-      </div>
+      <h2>
+        Beginner<br>
+        <span>Python Coder</span>
+      </h2>
+      <p>
+        I’m a student developer with a strong foundation in Python.
+        I enjoy solving logical problems and building my skills step by step
+        through practice and learning.
+      </p>
     </div>
 
-    <!-- ABOUT -->
     <section>
       <h3>About Me</h3>
       <p>
-        I’m a beginner coder who focuses on understanding concepts deeply
-        rather than rushing. Python is my strongest language, and I’m
-        gradually learning web development and backend technologies.
+        I focus on understanding programming concepts deeply.
+        Python is my strongest language, and I’m gradually expanding
+        into web and backend development.
       </p>
     </section>
 
-    <!-- SKILLS -->
     <section>
       <h3>Skills</h3>
       <div class="skills">
@@ -315,7 +306,6 @@ section p{
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section>
       <h3>Projects</h3>
       <div class="project">
@@ -327,13 +317,12 @@ section p{
       </div>
     </section>
 
-    <!-- LEARNING -->
-    <section>
-      <h3>Currently Learning</h3>
-      <p>• Advanced Python concepts</p>
-      <p>• Data Structures & Algorithms (Basics)</p>
-      <p>• JavaScript logic building</p>
-      <p>• Backend & Firebase basics</p>
+    <section id="contact">
+      <h3>Contact Me</h3>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button>Send Message</button>
     </section>
 
   </main>
