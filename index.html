@@ -8,7 +8,6 @@
 <style>
 :root{
   --bg:#050b1a;
-  --card:#0b1228;
   --glass:rgba(11,18,40,0.7);
   --text:#e5e7eb;
   --muted:#9ca3af;
@@ -83,13 +82,13 @@ body{
   color:var(--muted);
 }
 
-/* ================= BUTTONS ================= */
+/* ================= BUTTON ================= */
 .btn{
   display:block;
   width:100%;
   padding:14px;
   border-radius:14px;
-  margin-top:16px;
+  margin-top:20px;
   font-weight:600;
   text-decoration:none;
   text-align:center;
@@ -98,11 +97,6 @@ body{
 .btn.whatsapp{
   background:var(--green);
   color:#052e16;
-}
-
-.btn.contact{
-  background:var(--accent);
-  color:white;
 }
 
 /* ================= MAIN CONTENT ================= */
@@ -204,27 +198,6 @@ section p{
   margin-bottom:6px;
 }
 
-/* ================= CONTACT FORM ================= */
-input,textarea{
-  width:100%;
-  padding:12px;
-  border-radius:12px;
-  background:#020617;
-  border:1px solid var(--border);
-  color:white;
-  margin-bottom:14px;
-}
-
-button{
-  width:100%;
-  padding:13px;
-  border-radius:14px;
-  border:none;
-  background:var(--accent);
-  color:white;
-  font-weight:600;
-}
-
 /* ================= RESPONSIVE ================= */
 @media(max-width:900px){
   .container{
@@ -256,16 +229,12 @@ button{
       <div>🌱 Learning Web Development</div>
     </div>
 
-    <!-- WORKING BUTTONS -->
+    <!-- ONLY WORKING WHATSAPP BUTTON -->
     <a 
       href="https://wa.me/916367317712" 
       target="_blank" 
       class="btn whatsapp">
       WhatsApp
-    </a>
-
-    <a href="#contact" class="btn contact">
-      Contact
     </a>
   </aside>
 
@@ -315,14 +284,6 @@ button{
           loops, conditions, strings, lists, dictionaries, and functions.
         </p>
       </div>
-    </section>
-
-    <section id="contact">
-      <h3>Contact Me</h3>
-      <input type="text" placeholder="Your Name">
-      <input type="email" placeholder="Your Email">
-      <textarea rows="4" placeholder="Your Message"></textarea>
-      <button>Send Message</button>
     </section>
 
   </main>
