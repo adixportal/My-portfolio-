@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Sanket Sharma – Python Developer</title>
+<title>Sanket Sharma | Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 :root{
-  --bg:#0d1117;
-  --text:#e6edf3;
-  --muted:#8b949e;
-  --accent:#58a6ff;
+  --bg:#050b1a;
+  --panel:#0b1228cc;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#6366f1;
+  --accent2:#22c55e;
+  --border:rgba(255,255,255,0.08);
 }
 
 *{
@@ -21,67 +24,114 @@
 }
 
 body{
-  background:var(--bg);
+  background:linear-gradient(180deg,#020617,#050b1a);
   color:var(--text);
 }
 
-/* ===== WRAPPER ===== */
-.wrapper{
-  max-width:1100px;
+/* ===== LAYOUT ===== */
+.main{
+  max-width:1150px;
   margin:auto;
-  padding:80px 24px;
-}
-
-/* ===== HERO ===== */
-.hero{
-  margin-bottom:120px;
-}
-
-.hero h1{
-  font-size:3.2rem;
-  font-weight:700;
-  letter-spacing:-1px;
-}
-
-.hero h1 span{
-  color:var(--accent);
-}
-
-.hero .role{
-  margin-top:10px;
-  font-size:1.1rem;
-  color:var(--muted);
-}
-
-.hero p{
-  margin-top:24px;
-  max-width:720px;
-  font-size:1.05rem;
-  line-height:1.8;
-  color:var(--muted);
-}
-
-/* ===== SECTION LAYOUT ===== */
-.section{
+  padding:50px 20px;
   display:grid;
-  grid-template-columns:220px 1fr;
-  gap:60px;
-  margin-bottom:110px;
+  grid-template-columns:320px 1fr;
+  gap:40px;
 }
 
-.section h2{
-  font-size:0.9rem;
-  letter-spacing:1.8px;
-  text-transform:uppercase;
+/* ===== SIDEBAR ===== */
+.sidebar{
+  background:var(--panel);
+  backdrop-filter: blur(16px);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:32px 26px;
+}
+
+.profile{
+  text-align:center;
+}
+
+.avatar{
+  width:90px;
+  height:90px;
+  margin:auto;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),#38bdf8);
+  padding:3px;
+}
+
+.avatar div{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  background:#020617;
+}
+
+.profile h1{
+  margin-top:14px;
+  font-size:1.4rem;
+}
+
+.profile p{
   color:var(--muted);
+  font-size:0.9rem;
+  margin-top:4px;
+}
+
+.info{
+  margin-top:24px;
+  font-size:0.9rem;
+}
+
+.info div{
+  margin-bottom:10px;
+  color:var(--muted);
+}
+
+/* ===== BUTTONS ===== */
+.btn{
+  display:block;
+  width:100%;
+  text-align:center;
+  padding:12px;
+  border-radius:12px;
+  margin-top:14px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.btn.whatsapp{
+  background:var(--accent2);
+  color:#052e16;
+}
+
+.btn.primary{
+  background:var(--accent);
+  color:white;
 }
 
 /* ===== CONTENT ===== */
-.content p{
-  font-size:1.05rem;
-  line-height:1.8;
-  color:var(--muted);
+.content{
+  background:var(--panel);
+  backdrop-filter: blur(16px);
+  border:1px solid var(--border);
+  border-radius:26px;
+  padding:36px 40px;
+}
+
+section{
+  margin-bottom:42px;
+}
+
+section h2{
+  font-size:1.4rem;
   margin-bottom:14px;
+}
+
+section p{
+  color:var(--muted);
+  font-size:1rem;
+  line-height:1.7;
 }
 
 /* ===== SKILLS ===== */
@@ -92,48 +142,57 @@ body{
 }
 
 .skill{
-  font-size:0.95rem;
-  color:var(--text);
+  padding:8px 14px;
+  background:#020617;
+  border:1px solid var(--border);
+  border-radius:20px;
+  font-size:0.9rem;
 }
 
 /* ===== PROJECT ===== */
 .project{
-  margin-bottom:22px;
+  padding:18px;
+  background:#020617;
+  border:1px solid var(--border);
+  border-radius:16px;
 }
 
 .project h3{
-  font-size:1.05rem;
-  font-weight:600;
+  font-size:1.1rem;
   margin-bottom:6px;
 }
 
 .project p{
-  font-size:1rem;
+  font-size:0.95rem;
   color:var(--muted);
 }
 
-/* ===== CONTACT ===== */
-.contact p{
-  font-size:1rem;
-  color:var(--muted);
-  margin-bottom:10px;
+/* ===== CONTACT FORM ===== */
+input, textarea{
+  width:100%;
+  background:#020617;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:12px;
+  color:white;
+  margin-bottom:14px;
 }
 
-/* ===== FOOTER ===== */
-footer{
-  margin-top:140px;
-  font-size:0.85rem;
-  color:#6e7681;
+button{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:none;
+  background:var(--accent);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
 }
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:900px){
-  .section{
+  .main{
     grid-template-columns:1fr;
-    gap:26px;
-  }
-  .hero h1{
-    font-size:2.4rem;
   }
 }
 </style>
@@ -141,86 +200,69 @@ footer{
 
 <body>
 
-<div class="wrapper">
+<div class="main">
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Sanket <span>Sharma</span></h1>
-    <div class="role">Python Developer · Student</div>
-    <p>
-      I’m a Python-focused student developer with a strong foundation in
-      programming and logical problem solving.
-      I enjoy learning by building small projects and improving step by step.
-    </p>
-  </div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="profile">
+      <div class="avatar"><div></div></div>
+      <h1>Sanket Sharma</h1>
+      <p>Frontend Developer</p>
+    </div>
 
-  <!-- ABOUT -->
-  <div class="section">
-    <h2>About</h2>
-    <div class="content">
+    <div class="info">
+      <div>📧 sanketsharma.web@gmail.com</div>
+      <div>🐙 github.com/adixportal</div>
+      <div>📸 instagram.com/s4adw</div>
+    </div>
+
+    <a class="btn whatsapp" href="#">WhatsApp</a>
+    <a class="btn primary" href="#">Contact</a>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <section>
+      <h2>About Me</h2>
       <p>
-        I work mainly with Python and enjoy solving problems using logic,
-        data structures, and clean code practices.
+        I’m Sanket Sharma, a frontend developer focused on building clean,
+        modern, and responsive interfaces. I’m continuously improving my
+        skills and working on real-world projects.
       </p>
-      <p>
-        Alongside Python, I am learning web development technologies to
-        expand my skill set and build real-world applications.
-      </p>
-    </div>
-  </div>
+    </section>
 
-  <!-- SKILLS -->
-  <div class="section">
-    <h2>Skills</h2>
-    <div class="content skills">
-      <div class="skill">Python</div>
-      <div class="skill">Problem Solving</div>
-      <div class="skill">Data Structures (Basics)</div>
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">JavaScript (Beginner)</div>
-      <div class="skill">Git & GitHub</div>
-      <div class="skill">Firebase (Learning)</div>
-    </div>
-  </div>
-
-  <!-- PROJECTS -->
-  <div class="section">
-    <h2>Projects</h2>
-    <div class="content">
-
-      <div class="project">
-        <h3>Python Logic Programs</h3>
-        <p>Practice programs covering loops, conditions, strings, and lists.</p>
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">GitHub</div>
+        <div class="skill">Responsive Design</div>
       </div>
+    </section>
 
+    <section>
+      <h2>Project</h2>
       <div class="project">
-        <h3>Number Guessing Game</h3>
-        <p>Console-based game built using Python and random module.</p>
+        <h3>Expenses Checker App</h3>
+        <p>
+          A simple expense checker application that helps users track
+          daily expenses and manage spending effectively.
+        </p>
       </div>
+    </section>
 
-      <div class="project">
-        <h3>Simple Calculator</h3>
-        <p>Menu-driven calculator using Python functions.</p>
-      </div>
+    <section>
+      <h2>Contact</h2>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button>Send Message</button>
+    </section>
 
-    </div>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="section">
-    <h2>Contact</h2>
-    <div class="content contact">
-      <p>WhatsApp — +91 63673 17712</p>
-      <p>Email — sanketsharma.web@gmail.com</p>
-      <p>GitHub — github.com/yourusername</p>
-    </div>
-  </div>
-
-  <footer>
-    © 2026 Sanket Sharma
-  </footer>
-
+  </main>
 </div>
 
 </body>
