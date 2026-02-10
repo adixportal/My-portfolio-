@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sanket Sharma | Python Coder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:#e5e7eb;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    /* ===== ANIMATION ===== */
+    @keyframes fadeUp {
+      from{
+        opacity:0;
+        transform: translateY(30px);
+      }
+      to{
+        opacity:1;
+        transform: translateY(0);
+      }
+    }
+
+    header{
+      padding:70px 20px;
+      text-align:center;
+      background:linear-gradient(135deg,#020617,#0f172a);
+      animation: fadeUp 1s ease;
+    }
+
+    header h1{
+      font-size:2.3rem;
+      margin-bottom:10px;
+      color:#38bdf8;
+      transition:0.3s;
+    }
+
+    header h1:hover{
+      text-shadow:0 0 15px #38bdf8;
+    }
+
+    header p{
+      font-size:1.1rem;
+      opacity:0.9;
+      margin-top:5px;
+    }
+
+    .container{
+      max-width:1000px;
+      margin:auto;
+      padding:40px 20px;
+    }
+
+    section{
+      margin-bottom:45px;
+      animation: fadeUp 1s ease;
+    }
+
+    h2{
+      color:#38bdf8;
+      margin-bottom:18px;
+      font-size:1.6rem;
+    }
+
+    p{
+      margin-bottom:10px;
+    }
+
+    ul{
+      list-style:none;
+    }
+
+    ul li{
+      background:#020617;
+      margin-bottom:10px;
+      padding:14px;
+      border-radius:10px;
+      transition:0.3s;
+    }
+
+    ul li:hover{
+      transform: translateX(8px);
+      background:#020617cc;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills span{
+      display:inline-block;
+      background:#020617;
+      padding:10px 18px;
+      margin:6px;
+      border-radius:20px;
+      font-size:0.9rem;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .skills span:hover{
+      background:#38bdf8;
+      color:#020617;
+      transform: scale(1.08);
+      box-shadow:0 0 15px #38bdf8;
+    }
+
+    /* ===== PROJECT CARD ===== */
+    .project{
+      background:#020617;
+      padding:18px;
+      border-radius:14px;
+      margin-bottom:18px;
+      transition:0.4s;
+    }
+
+    .project:hover{
+      transform: translateY(-10px);
+      box-shadow:0 20px 30px rgba(0,0,0,0.4);
+    }
+
+    .project h3{
+      color:#7dd3fc;
+      margin-bottom:6px;
+    }
+
+    a{
+      color:#38bdf8;
+      text-decoration:none;
+    }
+
+    footer{
+      text-align:center;
+      padding:28px;
+      background:#020617;
+      font-size:0.9rem;
+      opacity:0.85;
+    }
+
+    @media(max-width:600px){
+      header h1{
+        font-size:1.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Sanket Sharma 👋</h1>
+  <p>Beginner Coder | Python Programmer | Student</p>
+  <p>“Python taught me how to think logically.  
+     Now I’m expanding that logic to the web.”</p>
+</header>
+
+<div class="container">
+
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I am a student and beginner coder with a strong foundation in Python.
+      I enjoy solving logical problems using loops, functions, strings,
+      lists, and dictionaries.
+    </p>
+    <p>
+      Currently learning web development and backend technologies
+      to become a complete developer.
+    </p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Python (Strong)</span>
+      <span>Problem Solving</span>
+      <span>HTML (Learning)</span>
+      <span>CSS (Learning)</span>
+      <span>JavaScript (Beginner)</span>
+      <span>Git & GitHub</span>
+      <span>Firebase (Learning)</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Python Logic Practice</h3>
+      <p>Programs based on loops, conditions, strings, lists, and functions.</p>
+    </div>
+
+    <div class="project">
+      <h3>Number Guessing Game (Python)</h3>
+      <p>Console-based game using random module and loops.</p>
+    </div>
+
+    <div class="project">
+      <h3>Simple Calculator (Python)</h3>
+      <p>Menu-driven calculator using Python functions.</p>
+    </div>
+
+    <div class="project">
+      <h3>Personal Portfolio Website</h3>
+      <p>Portfolio created using HTML & CSS (Beginner level).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Currently Learning</h2>
+    <ul>
+      <li>Advanced Python Concepts</li>
+      <li>Data Structures & Algorithms (Basics)</li>
+      <li>JavaScript Logic</li>
+      <li>Firebase Authentication & Database</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>📞 WhatsApp: <strong>+91 63673 17712</strong></p>
+    <p>📧 Email: <strong>sanketsharma.web@gmail.com</strong></p>
+    <p>💻 GitHub: <a href="#">github.com/yourusername</a></p>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 Sanket Sharma • Beginner Python Coder 🚀
+</footer>
+
+</body>
+</html>
