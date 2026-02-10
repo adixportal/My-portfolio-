@@ -6,213 +6,222 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root {
-  --bg: #0b0f1f;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
-  --accent: #38bdf8;
-  --section-gap: 100px;
+:root{
+  --bg:#0d1117;
+  --text:#e6edf3;
+  --muted:#8b949e;
+  --accent:#58a6ff;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
 }
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  scroll-behavior: smooth;
+body{
+  background:var(--bg);
+  color:var(--text);
 }
 
-/* ===== HERO ANIMATION ===== */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ===== WRAPPER ===== */
+.wrapper{
+  max-width:1100px;
+  margin:auto;
+  padding:80px 24px;
 }
 
-/* ===== HEADER / HERO ===== */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
-  animation: fadeInUp 1s ease-out;
+/* ===== HERO ===== */
+.hero{
+  margin-bottom:120px;
 }
 
-.hero h1 {
-  font-size: 4rem;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 15px;
+.hero h1{
+  font-size:3.2rem;
+  font-weight:700;
+  letter-spacing:-1px;
 }
 
-.hero h1 span {
-  background: linear-gradient(90deg, #38bdf8, #818cf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% 200%;
-  animation: gradientMove 3s ease infinite;
+.hero h1 span{
+  color:var(--accent);
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.hero .role{
+  margin-top:10px;
+  font-size:1.1rem;
+  color:var(--muted);
 }
 
-.hero p {
-  font-size: 1.15rem;
-  color: var(--muted);
-  margin-top: 14px;
+.hero p{
+  margin-top:24px;
+  max-width:720px;
+  font-size:1.05rem;
+  line-height:1.8;
+  color:var(--muted);
 }
 
-/* ===== SECTION STYLE ===== */
-.container {
-  width: 90%;
-  max-width: 1000px;
-  margin: auto;
-  padding-top: var(--section-gap);
+/* ===== SECTION LAYOUT ===== */
+.section{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:60px;
+  margin-bottom:110px;
 }
 
-section {
-  margin-bottom: var(--section-gap);
+.section h2{
+  font-size:0.9rem;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  color:var(--muted);
 }
 
-section h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 18px;
-  color: var(--accent);
-  border-bottom: 2px solid #1f2937;
-  padding-bottom: 8px;
-}
-
-.content p {
-  color: var(--muted);
-  font-size: 1rem;
-  margin-bottom: 12px;
+/* ===== CONTENT ===== */
+.content p{
+  font-size:1.05rem;
+  line-height:1.8;
+  color:var(--muted);
+  margin-bottom:14px;
 }
 
 /* ===== SKILLS ===== */
-.skills {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
 }
 
-.skill {
-  background: #121826;
-  color: var(--text);
-  padding: 10px 16px;
-  border-radius: 20px;
-  font-size: 0.95rem;
-  border: 1px solid #1f2937;
+.skill{
+  font-size:0.95rem;
+  color:var(--text);
 }
 
-/* ===== PROJECTS ===== */
-.project {
-  margin-bottom: 18px;
+/* ===== PROJECT ===== */
+.project{
+  margin-bottom:22px;
 }
 
-.project h3 {
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-  color: var(--text);
+.project h3{
+  font-size:1.05rem;
+  font-weight:600;
+  margin-bottom:6px;
 }
 
-.project p {
-  color: var(--muted);
-  font-size: 0.95rem;
+.project p{
+  font-size:1rem;
+  color:var(--muted);
 }
 
 /* ===== CONTACT ===== */
-.contact p {
-  font-size: 0.95rem;
-  color: var(--muted);
-  margin-bottom: 8px;
-  word-break: break-word;
+.contact p{
+  font-size:1rem;
+  color:var(--muted);
+  margin-bottom:10px;
 }
 
 /* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  font-size: 0.85rem;
-  padding: 30px 0;
-  color: #6b7280;
+footer{
+  margin-top:140px;
+  font-size:0.85rem;
+  color:#6e7681;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .section{
+    grid-template-columns:1fr;
+    gap:26px;
+  }
+  .hero h1{
+    font-size:2.4rem;
+  }
 }
 </style>
-
 </head>
+
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <div>
+<div class="wrapper">
+
+  <!-- HERO -->
+  <div class="hero">
     <h1>Sanket <span>Sharma</span></h1>
-    <p>Python Developer | Logic & Problem Solver<br>Building dynamic apps, learning full stack development</p>
+    <div class="role">Python Developer · Student</div>
+    <p>
+      I’m a Python-focused student developer with a strong foundation in
+      programming and logical problem solving.
+      I enjoy learning by building small projects and improving step by step.
+    </p>
   </div>
-</section>
 
-<!-- ABOUT -->
-<div class="container">
-<section id="about">
-  <h2>About Me</h2>
-  <div class="content">
-    <p>I am a student developer with strong Python skills, focused on building logical solutions and clean code.</p>
-    <p>Passionate about web technologies and continuously improving through practice, projects and real-world learning.</p>
+  <!-- ABOUT -->
+  <div class="section">
+    <h2>About</h2>
+    <div class="content">
+      <p>
+        I work mainly with Python and enjoy solving problems using logic,
+        data structures, and clean code practices.
+      </p>
+      <p>
+        Alongside Python, I am learning web development technologies to
+        expand my skill set and build real-world applications.
+      </p>
+    </div>
   </div>
-</section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills">
-    <div class="skill">Python (Strong)</div>
-    <div class="skill">Problem Solving</div>
-    <div class="skill">HTML</div>
-    <div class="skill">CSS</div>
-    <div class="skill">JavaScript (Beginner)</div>
-    <div class="skill">Git & GitHub</div>
-    <div class="skill">Firebase (Learning)</div>
+  <!-- SKILLS -->
+  <div class="section">
+    <h2>Skills</h2>
+    <div class="content skills">
+      <div class="skill">Python</div>
+      <div class="skill">Problem Solving</div>
+      <div class="skill">Data Structures (Basics)</div>
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript (Beginner)</div>
+      <div class="skill">Git & GitHub</div>
+      <div class="skill">Firebase (Learning)</div>
+    </div>
   </div>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="project">
-    <h3>Python Logic Programs</h3>
-    <p>A set of logic-based Python exercises and solutions using loops, functions and collections.</p>
-  </div>
-  <div class="project">
-    <h3>Guess the Number Game</h3>
-    <p>Console game built with Python using random and input handling.</p>
-  </div>
-  <div class="project">
-    <h3>Simple Calculator</h3>
-    <p>Menu-style calculator built using Python functions.</p>
-  </div>
-</section>
+  <!-- PROJECTS -->
+  <div class="section">
+    <h2>Projects</h2>
+    <div class="content">
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="contact">
-    <p>📞 WhatsApp: +91 63673 17712</p>
-    <p>📧 Email: sanketsharma.web@gmail.com</p>
-    <p>💻 GitHub: github.com/yourusername</p>
+      <div class="project">
+        <h3>Python Logic Programs</h3>
+        <p>Practice programs covering loops, conditions, strings, and lists.</p>
+      </div>
+
+      <div class="project">
+        <h3>Number Guessing Game</h3>
+        <p>Console-based game built using Python and random module.</p>
+      </div>
+
+      <div class="project">
+        <h3>Simple Calculator</h3>
+        <p>Menu-driven calculator using Python functions.</p>
+      </div>
+
+    </div>
   </div>
-</section>
+
+  <!-- CONTACT -->
+  <div class="section">
+    <h2>Contact</h2>
+    <div class="content contact">
+      <p>WhatsApp — +91 63673 17712</p>
+      <p>Email — sanketsharma.web@gmail.com</p>
+      <p>GitHub — github.com/yourusername</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Sanket Sharma
+  </footer>
+
 </div>
-
-<footer>
-  © 2026 Sanket Sharma • Made with 💻
-</footer>
 
 </body>
 </html>
