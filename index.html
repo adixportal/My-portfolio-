@@ -28,7 +28,7 @@ body{
   color:var(--text);
 }
 
-/* ================= LAYOUT ================= */
+/* ============ LAYOUT ============ */
 .container{
   max-width:1150px;
   margin:auto;
@@ -38,7 +38,7 @@ body{
   gap:40px;
 }
 
-/* ================= PROFILE CARD ================= */
+/* ============ PROFILE CARD ============ */
 .profile-card{
   background:var(--glass);
   backdrop-filter:blur(18px);
@@ -49,12 +49,12 @@ body{
   box-shadow:0 20px 60px rgba(0,0,0,0.45);
 }
 
-/* ===== AVATAR (FIXED, PREMIUM) ===== */
+/* ===== AVATAR (PERFECT CROP) ===== */
 .avatar{
-  width:104px;
-  height:104px;
+  width:112px;
+  height:112px;
   border-radius:50%;
-  margin:8px auto 0;
+  margin:6px auto 0;
   padding:3px;
   background:linear-gradient(180deg,#6366f1,#38bdf8);
 }
@@ -64,13 +64,15 @@ body{
   height:100%;
   border-radius:50%;
   object-fit:cover;
+  object-position:50% 25%; /* 👈 character face focus */
   display:block;
   background:#020617;
   box-shadow:
     inset 0 0 0 2px rgba(255,255,255,0.04),
-    0 10px 28px rgba(0,0,0,0.6);
+    0 10px 28px rgba(0,0,0,0.65);
 }
 
+/* ============ PROFILE TEXT ============ */
 .profile-card h1{
   margin-top:18px;
   font-size:1.45rem;
@@ -93,7 +95,7 @@ body{
   color:var(--muted);
 }
 
-/* ===== BUTTON ===== */
+/* ============ BUTTON ============ */
 .btn{
   display:block;
   width:100%;
@@ -107,7 +109,7 @@ body{
   color:#052e16;
 }
 
-/* ================= MAIN CONTENT ================= */
+/* ============ MAIN ============ */
 .main{
   background:var(--glass);
   backdrop-filter:blur(18px);
@@ -116,11 +118,10 @@ body{
   overflow:hidden;
 }
 
-/* ================= HERO ================= */
+/* ============ HERO ============ */
 .hero{
   padding:80px 56px 90px;
   position:relative;
-  overflow:hidden;
 }
 
 .hero::before{
@@ -134,17 +135,6 @@ body{
 
 .hero-content{
   position:relative;
-}
-
-.hero small{
-  display:inline-block;
-  margin-bottom:14px;
-  padding:6px 12px;
-  font-size:.75rem;
-  border-radius:999px;
-  background:#020617;
-  border:1px solid var(--border);
-  color:var(--muted);
 }
 
 .hero h2{
@@ -168,7 +158,7 @@ body{
   color:var(--muted);
 }
 
-/* ================= SECTIONS ================= */
+/* ============ SECTIONS ============ */
 section{
   padding:46px 56px;
   border-top:1px solid var(--border);
@@ -185,7 +175,7 @@ section p{
   line-height:1.7;
 }
 
-/* ================= SKILLS ================= */
+/* ============ SKILLS ============ */
 .skills{
   display:flex;
   flex-wrap:wrap;
@@ -200,7 +190,7 @@ section p{
   font-size:0.9rem;
 }
 
-/* ================= PROJECT ================= */
+/* ============ PROJECT ============ */
 .project{
   background:#020617;
   border:1px solid var(--border);
@@ -227,7 +217,7 @@ section p{
   font-weight:600;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ============ RESPONSIVE ============ */
 @media(max-width:900px){
   .container{
     grid-template-columns:1fr;
@@ -252,7 +242,7 @@ section p{
   <!-- PROFILE -->
   <aside class="profile-card">
     <div class="avatar">
-      <img src="https://i.ibb.co/CkKrmCf/7f44f0859815c92e80b074afe2d94c51.jpg" alt="Sanket Sharma">
+      <img src="https://i.ibb.co/vvCpqgXs/40805baf87642155fe586486c373a0cf.jpg" alt="Sanket Sharma">
     </div>
 
     <h1>Sanket Sharma</h1>
@@ -274,15 +264,14 @@ section p{
 
     <div class="hero">
       <div class="hero-content">
-        <small>Focused on Logic · Learning by Building</small>
         <h2>
           Beginner<br>
           <span>Python Coder</span>
         </h2>
         <p>
           I’m a student developer with strong Python fundamentals.
-          I focus on logic building, clean code, and learning real-world
-          concepts step by step.
+          I focus on logic building, clean code, and learning
+          real-world concepts step by step.
         </p>
       </div>
     </div>
